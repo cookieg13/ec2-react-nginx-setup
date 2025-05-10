@@ -53,7 +53,7 @@ Once you’re comfortable with the EC2 + NGINX setup, you can start exploring th
 - ✅ **CI/CD Pipelines**: Automatically deploy your app whenever you make changes. No more manual uploads, everything happens automatically.
 - 🐳 **Docker**: Package your app and everything it needs into a single container. This way, your app runs the same everywhere, whether on your computer or a server.
 - ☸️ **Kubernetes (K8s)**: Manage multiple servers and scale your app as needed. It helps if your app grows and needs to handle more traffic.
-- ☁️ **Managed Services**: Use platforms like Vercel, Netlify, or Railway. These services host your app for you, so you don’t have to manage the server yourself. It’s fast, easy, and requires less maintenance.
+- ☁️ **Managed Services**: Use platforms like Vercel, Netlify - these services host your app for you, so you don’t have to manage the server yourself. It’s fast, easy, and requires less maintenance.
 
   
 ---
