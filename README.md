@@ -65,8 +65,8 @@ Once you’re comfortable with the EC2 + NGINX setup, you can start exploring th
 ## 🚀 Prerequisites
 
 - A built React app (`npm run build`)
-- An AWS account (e.g., Lightsail or EC2)
-- A domain (e.g., purchased from [GoDaddy](https://www.godaddy.com/))
+- An AWS account (e.g., [AWS Lightsail](https://lightsail.aws.amazon.com/ls/webapp/home/instances))
+- A domain (e.g., [GoDaddy](https://www.godaddy.com/))
 - Access to your domain registrar's DNS settings
 - `scp` and `ssh` installed locally
 - Your EC2 PEM key (e.g., `dgtest.pem`)
