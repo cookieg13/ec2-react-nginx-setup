@@ -14,6 +14,10 @@ This guide walks you through deploying a React Single Page Application (SPA) on 
 
   <img width="1727" alt="Screenshot 2025-05-10 at 8 23 03 PM" src="https://github.com/user-attachments/assets/c47a258c-d937-43fc-b236-fcc891d558d9" />
 
+> 📝 **Note:** These commands work on Ubuntu-based systems  
+> (macOS Terminal, Linux shell, or Windows WSL).  
+> If you're using another OS or shell, the steps might differ slightly.
+
 
 
 This EC2 + NGINX deployment is beginner-friendly, it’s a great starting point for developers who want to:
@@ -67,11 +71,12 @@ Once you’re comfortable with the EC2 + NGINX setup, you can start exploring th
 - `scp` and `ssh` installed locally
 - Your EC2 PEM key (e.g., `dgtest.pem`)
 
+  
+
 ---
 
 ## ☁️ EC2 Setup (Ubuntu-based)
-
-### ✅ Step 1: Launch EC2 Instance
+### ✅ Launch EC2 Instance
 
 1. Go to [AWS EC2 Console](https://console.aws.amazon.com/ec2).
 2. Choose a region close to your location.
@@ -87,9 +92,7 @@ Once you’re comfortable with the EC2 + NGINX setup, you can start exploring th
      - Connect to Your Instance Wait for a minute until the instance is in "Running" state.
      - Click the instance and find the public IP (e.g. 12.34.56.78)
 
-### ✅ Step 2: Connect to Your Instance
-
-
+### ✅ Connect to Your Instance
 
 In your terminal:
 
@@ -127,38 +130,6 @@ If active, allow HTTP traffic:
 
 ```bash
 sudo ufw allow 80/tcp
-```
-
-Create NGINX config:
-
-```bash
-sudo nano /etc/nginx/sites-available/react-proxy.conf
-```
-
-Paste:
-
-```nginx
-server {
-    listen 80;
-    server_name dgspace.xyz www.dgspace.xyz;
-
-    location / {
-        proxy_pass http://127.0.0.1:3000;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection 'upgrade';
-        proxy_set_header Host $host;
-        proxy_cache_bypass $http_upgrade;
-    }
-}
-```
-
-Enable the config:
-
-```bash
-sudo ln -s /etc/nginx/sites-available/react-proxy.conf /etc/nginx/sites-enabled/
-sudo nginx -t
-sudo systemctl reload nginx
 ```
 
 At this point, you can already visit http://12.34.56.78 (your EC2 IP) and see the NGINX welcome page or a test page.
