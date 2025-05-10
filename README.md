@@ -12,6 +12,9 @@ This guide walks you through deploying a React Single Page Application (SPA) on 
 - **SSL**: Let's Encrypt via Certbot
 - **Domain**: [`dgspace.xyz`](http://dgspace.xyz)
 
+  <img width="1727" alt="Screenshot 2025-05-10 at 8 23 03 PM" src="https://github.com/user-attachments/assets/c47a258c-d937-43fc-b236-fcc891d558d9" />
+
+
 ---
 
 ## 🚀 Prerequisites
